@@ -4,7 +4,7 @@
  * @flow
  */
 import React, {Component} from 'react';
-import {AppRegistry, View} from 'react-native';
+import {AppRegistry, View, ScrollView, FlatList, Text, Image} from 'react-native';
 import SocialDetail from './SocialDetail';
 
 const datas = [
@@ -59,45 +59,40 @@ export default class HelloWorld extends Component {
     }
 
     componentWillMount(){
-        console.log(this.state.item_index);
-            this.setState(
-                {
-                    item_index: 1
-                }
-            )
+        console.log('test');
     }
 
-    componentDidMount() {
-        console.log(this.state.item_index);
-        // this.interval = setInterval(()=> {
-        //     this.setState(
-        //         {
-        //                 item_index: 2
-        //         }
-        //     )
-        // }, 1000);
-        this.setState(
-            {
-                item_index: 2
-            }
-        )
-    }
+    // componentDidMount() {
+    //     console.log(this.state.item_index);
+    //     this.interval = setInterval(()=> {
+    //         this.setState(
+    //             {
+    //                     item_index: 2
+    //             }
+    //         )
+    //     }, 1000);
+    //     this.setState(
+    //         {
+    //             item_index: 2
+    //         }
+    //     )
+    // }
 
     // componentWillUnmount() {
     //     clearInterval(this.interval);
     // }
 
-    dataConvert(item) {
-        return (
-            {
-                headIcon: item.authorInfo.avatar,
-                userName: item.authorInfo.username,
-                image: item.image,
-                likeCount: item.likes,
-                shareCount: item.shares
-            }
-        )
-    }
+    // dataConvert(item) {
+    //     return (
+    //         {
+    //             headIcon: item.authorInfo.avatar,
+    //             userName: item.authorInfo.username,
+    //             image: item.image,
+    //             likeCount: item.likes,
+    //             shareCount: item.shares
+    //         }
+    //     )
+    // }
 
 
     render() {
@@ -109,11 +104,7 @@ export default class HelloWorld extends Component {
                 height: '100%',
                 backgroundColor: 'black'
             }}>
-                <SocialDetail
-                    item={this.dataConvert(datas[this.state.item_index])}
-                 >
-
-                </SocialDetail>
+                <Text style={{color: 'white'}}>Hello World</Text>
             </View>
         );
     }
