@@ -4,18 +4,20 @@
  * @flow
  */
 import React, {Component} from 'react';
-import {AppRegistry, View, ScrollView, FlatList, Text, Image} from 'react-native';
-import SocialDetail from './SocialDetail';
+import {View} from 'react-native';
+import NavBar from "./subComponent/NavBar";
+import SocialImage from "./subComponent/SocialImage";
+import ImageOperation from "./subComponent/ImageOperation";
 
 const datas = [
     {
-        "image": "http://www.qmeng.wang/content/uploadfile/201507/1a69ee216d1fc75cf1a6b70fc2658c5f20150728152053.jpg",
+        "image": "https://static.gethover.com/build/images/showcase/thumbnail/app/pic_20170411_09-0bdd2f9a4f.jpg",
         "likes": 50,
         "shares": 43,
         "views": 150,
         "authorInfo": {
             "username": "Baymax",
-            "avatar": "http://www.qq22.com.cn/uploads/allimg/c161203/14PE55YXA0-25107.jpg",
+            "avatar": "https://static.gethover.com/build/images/showcase/thumbnail/app/pic_20170411_12-188840f4e0.jpg",
         },
         "width": 1920,
         "height": 1080,
@@ -58,43 +60,6 @@ export default class HelloWorld extends Component {
         }
     }
 
-    componentWillMount(){
-        console.log('test');
-    }
-
-    // componentDidMount() {
-    //     console.log(this.state.item_index);
-    //     this.interval = setInterval(()=> {
-    //         this.setState(
-    //             {
-    //                     item_index: 2
-    //             }
-    //         )
-    //     }, 1000);
-    //     this.setState(
-    //         {
-    //             item_index: 2
-    //         }
-    //     )
-    // }
-
-    // componentWillUnmount() {
-    //     clearInterval(this.interval);
-    // }
-
-    // dataConvert(item) {
-    //     return (
-    //         {
-    //             headIcon: item.authorInfo.avatar,
-    //             userName: item.authorInfo.username,
-    //             image: item.image,
-    //             likeCount: item.likes,
-    //             shareCount: item.shares
-    //         }
-    //     )
-    // }
-
-
     render() {
         return (
             <View style={{
@@ -104,10 +69,15 @@ export default class HelloWorld extends Component {
                 height: '100%',
                 backgroundColor: 'black'
             }}>
-                <Text style={{color: 'white'}}>Hello World</Text>
+                <NavBar />
+                <SocialImage
+                    image={datas[0].image}
+                />
+                <ImageOperation
+                    likeCount={datas[0].likes}
+                    shareCount={datas[0].shares}
+                />
             </View>
         );
     }
 }
-
-AppRegistry.registerComponent('HelloWorld', () => HelloWorld);

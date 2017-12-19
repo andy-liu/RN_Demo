@@ -13,7 +13,7 @@ export default class SocialDetail extends Component {
                 alignItems: 'center',
                 flexDirection: 'column',
                 width: '100%',
-                height: '100%',
+                height: 500,
                 backgroundColor: 'black'
             }}>
                 <NavBar/>
