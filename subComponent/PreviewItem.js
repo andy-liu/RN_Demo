@@ -79,7 +79,8 @@ const styles = StyleSheet.create({
     text: {
         marginLeft: 5,
         fontSize: 14,
-        color: 'white'
+        color: 'white',
+        backgroundColor: 'transparent'
     },
     HeadIcon: {
         width: 24,
